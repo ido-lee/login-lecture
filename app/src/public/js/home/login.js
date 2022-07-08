@@ -34,5 +34,11 @@ function login( ) {
         // json 방식으로 전송 
         // stringify : 문자 열로 바꿈
         body : JSON.stringify(req)
-    });
+    }).then((res) => res.json())
+    // 로그인 인증 받음
+    // .then((res) => console.log(res.json())) -- 확인
+    
+    // 파라미터를 어떠한 함수 안에 파라미터로 넘길떄는 생략 가능 
+    // .then((res) => console.log(res));  ===  .then(console.log);
+    .then(console.log);
 }

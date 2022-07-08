@@ -7,9 +7,10 @@ const router = express.Router();
 // ctrl 사용경로 선언
 const ctrl = require("./home.ctrl");
 
-// 요청이 '/'로 오면 ctrl에 hello를 실행
-router.get("/", ctrl.hello)
-router.get("/login", ctrl.login);
+// 요청이 '/'로 오면 ctrl에 home를 실행 (렌더링)
+router.get("/", ctrl.output.home);
+router.get("/login", ctrl.output.login);
+router.post("/login", ctrl.process.login);
     
 // 공유
 module.exports = router;
